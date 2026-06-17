@@ -16,34 +16,33 @@
 
 ```bash
 # 1. Установка зависимостей
-pip install -r requirements.txt
+pip install -r osint_agent/requirements.txt
 
 # 2. Запуск сбора
-python osint_agent.py "Название компании"
+python osint_agent/osint_agent.py "Название компании"
 ```
 
 ## Пример
 
 ```bash
-python osint_agent.py "Шоколадница"
+python osint_agent/osint_agent.py "Шоколадница"
 ```
 
-После выполнения в папке `results/` появятся:
+После выполнения в папке `osint_agent/results/` появятся:
 - `report_Шоколадница_20260617_1730.md` — читабельный отчёт
-- `report_Шоколадница_20260617_1730_raw.json` — сырые данные для обработки
+- `report_Шоколадница_20260617_1730_raw.json` — сырые данные
 
 ## Структура проекта
 
 ```
-osint_agent/
-├── osint_agent.py        # Основной скрипт
-├── scraper_selenium.py   # Скрапер на Selenium (для JS-сайтов)
-├── requirements.txt      # Зависимости
-├── .env.example          # Шаблон конфигурации (необязательно)
-├── results/              # Папка с отчётами
-└── README.md             # Этот файл
-.gitignore                # Исключения для Git
-.venv/                    # Виртуальное окружение (в Git не попадает)
+├── .gitignore
+├── README.md
+└── osint_agent/
+    ├── osint_agent.py        # Основной скрипт
+    ├── scraper_selenium.py   # Скрапер на Selenium (для JS-сайтов)
+    ├── requirements.txt      # Зависимости
+    ├── .env.example          # Шаблон конфигурации (необязательно)
+    └── results/              # Папка с отчётами
 ```
 
 ## Куда пропали Google API ключи?
